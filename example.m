@@ -62,7 +62,7 @@ filename=[placeFile nameFile];
 data=importdata(namesrc);
 data = data.data;
 id=data(:,1);
-firmid=data(:,2);
+firmid=data(:,3);
 y=data(:,4);
 clear data
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
