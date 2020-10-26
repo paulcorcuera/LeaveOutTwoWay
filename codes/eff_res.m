@@ -192,7 +192,8 @@ if K==0
        %good approximation in very reasonable computation time using the
        %following alternative found here: http://www.cs.cmu.edu/~jkoutis/EffectiveResistances/EffectiveResistances.m
        
-       scale = ceil(log2(NT)/epsilon)
+       %scale = ceil(log2(NT)/epsilon)
+       scale = 500
        
        %Auxiliary components
        X_fe=parallel.pool.Constant([sparse(NT,N) X(:,N+1:end)]); 
