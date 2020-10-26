@@ -17,6 +17,7 @@ path(path,'CMG'); %this contains the main LeaveOut Routines.
 MakeCMG;
 cd ..
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
                   %PARALLEL ENVIRONMENT
                   
 %Note: The user should decide which set-up is most suitable given
@@ -24,8 +25,8 @@ cd ..
 %      estimation has been carried out.                  
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 try
-pool=parpool(40,'IdleTimeout', Inf);
-%pool=parpool(str2num(getenv('SLURM_CPUS_PER_TASK')),'IdleTimeout', Inf);
+%pool=parpool(4);
+pool=parpool(str2num(getenv('SLURM_CPUS_PER_TASK')),'IdleTimeout', Inf);
 %pool = parpool('dcs', 64);
 end
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -45,7 +46,7 @@ end
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%                  
 %Input File
-namesrc='src/test.csv'; %where original data is
+namesrc='~/scratch/fake_matched_employer_employee.csv'; %where original data is in the cluster
 
 %Log
 placelog='logs/';
