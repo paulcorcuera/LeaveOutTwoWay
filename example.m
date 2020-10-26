@@ -60,6 +60,7 @@ filename=[placeFile nameFile];
                     %LOAD DATA
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 data=importdata(namesrc);
+data = data.data;
 id=data(:,1);
 firmid=data(:,2);
 y=data(:,4);
