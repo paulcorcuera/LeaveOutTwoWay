@@ -85,8 +85,10 @@ logname=[placelog namelog  '.log'];
 system(['rm ' logname])
 diary(logname)
 
+tic
 %Run
 [sigma2_psi,sigma_psi_alpha,sigma2_alpha] = leave_out_COMPLETE(y,id,firmid,leave_out_level,controls,resid_controls,andrews_estimates,eigen_diagno,subsample_llr_fit,restrict_movers,do_SE,type_of_algorithm,epsilon,filename);
+toc
 
 %Close
 delete(pool)
